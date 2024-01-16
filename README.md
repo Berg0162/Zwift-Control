@@ -31,4 +31,4 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 |---------------|--------------------------|--------------------------|
 |One Click|Increase FTP|Decrease FTP|
 |Double Click| | |
-|Long|Change your Camera View|Skip Workout Step|
+|Long|Change your Camera View|Skip a Workout Segment  |
