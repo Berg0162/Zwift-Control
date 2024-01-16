@@ -37,7 +37,7 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
-Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids and it has a sticky tape at the bottom for easy mounting on the handlebars...<br>
+Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids and it has a sticky tape at the back for easy mounting on the handlebars...<br>
 
 <b>Wiring correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
