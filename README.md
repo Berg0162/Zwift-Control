@@ -58,7 +58,7 @@ The most simple setup is to activate and use the internal pullup resistor that t
 <b>PullDOWN</b><br>
 Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground with a 10kOhm resistor. The other button side is connected to Vcc. When the button is pushed/closed the GPIO pin will go to logical HIGH.<br>
 
-### Setup around the handlebars
+## Setup around the handlebars
 Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that houses the board and a (LiPo) battery <b>near the handlebars</b>. It is critical that you can reach the buttons easily during a ride. Two obvious options:
 - Mount the buttons on top of the pod or
 - Wire the buttons detached of the pod and tie or stick the buttons to your handlebars.
@@ -66,6 +66,10 @@ Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that hous
 Notice how in this ergonomic setup a modified cable binder (type Velcro strap) is holding the (face down!) pushbutton in place. Fore finger is most capable of doing the clicking in a natural way while still holding the handlebar.
  
 <img src="./images/Zwift_Control_Button_mount_small.png" width="796" height="336" alt="Velcro strap">
- 
+
+### How to connect to your computer?
+When you first power on your ESP32/nRF52 board with the Zwift-Control code loaded, it advertises itself as a standard Bluetooth keyboard (officially per the spec called a HID – Human Interface Device). That means you’ll see it show up on your Bluetooth settings on a Mac or PC. Notice: Zwift itself doesn’t support the Bluetooth HID devices.<br>
+
+You’ll simply have to go into your Bluetooth devices on Mac or PC, and pair it up just like you’d pair up a new Bluetooth keyboard, mouse, headphones, or whatever else it is that you pair. Only after you have successfully paired it with your computer that runs the Zwift app, it will be active during the next Zwift ride. Next time when you start your computer and ESP32/nRF52 Zwift Control, pairing will be fully automatic: auto pairing!
 
 
