@@ -33,11 +33,14 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 |Double Click| | |
 |Long|Change your Camera View|Skip a Workout Segment  |
 
-### Two buttons
+## Connect Two buttons to the board of your choice
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
-Connecting two push buttons for game control is quite easy but should be done correctly. A membrane push button has the advantage that it is not very sensitive to fluids....<br>
+Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids....
+- Mount the buttons on top of the pod (project container) that houses the board and LiPo battery
+- wire the buttons and attach them to your handlebar where you can reach them quickly
+<br>
 <b>Wiring the two buttons correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
 <br clear="left">
