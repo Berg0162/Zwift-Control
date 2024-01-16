@@ -15,9 +15,9 @@ Review by DCRainmain: [Zwift Control For Your Handlebars](https://www.dcrainmake
 - Some functionality of Zwift Play Controller (<b>NO</b> steering!)
 
 ## Mapping of 2 buttons to game actions
-The code has implemented a limited set of the official mapping of keyboard shortcuts during Zwift game: [see keyboard shortcuts](https://support.zwift.com/en_us/keyboard-shortcuts-rkGrgwd4B)<br>
-Default Zwift mapping is one key to one action! The present code allows for 3 actions mapped to one key, since it can detect the difference between a single button click, a double button click and a "long" button press (longer than 0.5 second). Each of these will initiate a different game action.<br>
-
+The code has implemented a limited set of the official mapping of keyboard shortcuts during the Zwift game: [see keyboard shortcuts](https://support.zwift.com/en_us/keyboard-shortcuts-rkGrgwd4B)<br>
+Default Zwift keyboard mapping is one key to one action! The present code allows for 3 actions mapped to one key, since it can detect the difference between a single button click, a double button click and a "long hold" button click (longer than 0.5 second). Each of these will initiate a different game action.<br>
+In addition the Zwift game knows two different modes in the game: Freeride/Race and Workout mode. Some of the mappings will have only effect if in the "right" mode. The code will handle the different modes without your intervention, like is detailed hereafter:
 ### Freeride/Race
 |Action|Button #1|Button #2|
 |---------------|--------------------------|--------------------------|
