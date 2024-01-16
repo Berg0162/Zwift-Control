@@ -42,13 +42,19 @@ Connecting two push buttons to the board is quite easy but should be done correc
 <b>Wiring correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
 <br clear="left">
-
-<b>PullUP</b><br>
-The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
 ```C++
 // Two Keys/Buttons settings connected to
 #define PIN_BUTTON1    A0   // GPIO26 -> ESP32 Feather V2 
 #define PIN_BUTTON2    A1   // GPIO25 -> ESP32 Feather V2
+```
+<b>PullUP</b><br>
+The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
+```C++
+#include <OneButton.h>
+
+// Setup and use PullUp resistors TRUE means button pushed --> LOW
+OneButton zwiftButton1(PIN_BUTTON1, true);
+OneButton zwiftButton2(PIN_BUTTON2, true);
 ```
 <br>
 <p align=left>
