@@ -7,7 +7,7 @@ Simple Zwift BLE Remote Control with only 2 buttons
 
 ## What it does:
 The code turns an ESP32/nRF52 board into a 2 button (with 3 states) Bluetooth LE controller. Optimized for use with Zwift game to remotely initiate specific game actions that are mapped (by the Zwift app) to different keys of the regular keyboard.<br> 
-In short: mimics some keys of your keyboard
+In short: mimics some keys of your keyboard!
 
 ## Low cost DIY alternative for:
 - Keith Wakeham's [Kommander](https://titanlab.co/715-2/) <br>
@@ -16,9 +16,10 @@ Review by DCRainmain: [Zwift Control For Your Handlebars](https://www.dcrainmake
 
 ## Mapping of 2 buttons to game actions
 The code has implemented a limited set of the official mapping of keyboard shortcuts during the Zwift game: [see keyboard shortcuts](https://support.zwift.com/en_us/keyboard-shortcuts-rkGrgwd4B)<br>
-Default Zwift keyboard mapping is one key to one action! The present code allows for 3 actions mapped to one key, since it can detect the difference between a single button click, a double button click and a "long hold" button click (longer than 0.5 second). Each of these will initiate a different game action.<br>
-In addition the Zwift game knows two different modes in the game: Freeride/Race and Workout mode. Some of the mappings will have only effect if in the "right" mode. The code will handle the different modes without your intervention, like is detailed hereafter:
-### Freeride/Race
+Default Zwift keyboard mapping is one key to one action! The present code allows for 3 actions mapped to one key, since it can detect the difference between a single button click, a double button click and a "long" button click (longer than 0.5 second). Each of these will initiate a different game action.<br>
+In addition the Zwift game knows two different modes: Freeride/Race and Workout mode. Some of the mappings will have only effect if in the "right" mode. The code will handle the different modes without your intervention, as detailed hereafter:
+
+### Freeride/Race mode
 |Action|Button #1|Button #2|
 |---------------|--------------------------|--------------------------|
 |One Click|Turn left at intersection|Turn right at intersection|
