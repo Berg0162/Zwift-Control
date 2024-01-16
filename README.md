@@ -63,7 +63,7 @@ Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that hous
 - Mount the buttons on top of the pod or
 - Wire the buttons detached of the pod and tie or stick the buttons to your handlebars.
 
-Notice how in this ergonomic setup a modified cable binder (type Velcro strap) is holding the (face down!) pushbutton in place. Fore finger is most capable for doing the clicking in a natural way while still holding the handlebar.
+Notice how in this ergonomic setup a modified cable binder (type Velcro strap) is holding the (face down!) pushbutton in place. Fore finger is most capable of doing the clicking in a natural way while still holding the handlebar.
  
 <img src="./images/Zwift_Control_Button_mount_small.png" width="796" height="336" alt="Velcro strap">
  
