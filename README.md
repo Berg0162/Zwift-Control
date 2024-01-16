@@ -61,6 +61,9 @@ Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground
 ### Setup around the handlebars
 Use your inventiveness to mount the electronics enclosure that houses the board and a LiPo battery near the handlebars where you can reach the buttons easily during a ride. Two options:
 - Mount the buttons on top of the pod (electronics enclosure) or
-- Wire the buttons detached of the pod and attach the buttons to your handlebars 
+- Wire the buttons detached of the pod and attach the buttons to your handlebars
+- 
+<img src="./images/Zwift_Control_Button_mount_small.png" width="796" height="336" alt="wiring">
+ 
 
 
