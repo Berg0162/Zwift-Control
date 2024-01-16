@@ -33,13 +33,13 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 |Double Click| | |
 |Long|Change your Camera View|Skip a Workout Segment  |
 
-## Connect Two buttons to the board of your choice
+## Wiring the buttons to the board
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
 Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids....<br>
 
-<b>Wiring the two buttons correctly</b><br>
+<b>Wiring correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
 <br clear="left">
 
@@ -52,12 +52,15 @@ The most simple setup is to activate and use the internal pullup resistor that t
 ```
 <br>
 <p align=left>
-<img src="./images/button.png" width="796" height="336" alt="Zteering">
+<img src="./images/button.png" width="796" height="336" alt="wiring">
 </p>
 <br clear="left">
 <b>PullDOWN</b><br>
 Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground with a 10kOhm resistor. The other button side is connected to Vcc. When the button is pushed/closed the GPIO pin will go to logical HIGH.<br>
 
-- Mount the buttons on top of the pod (project container) that houses the board and LiPo battery
-- wire the buttons and attach them to your handlebar where you can reach them quickly
+### Setup around the handlebars
+Use your inventiveness to mount the electronics enclosure that houses the board and a LiPo battery near the handlebars where you can reach the buttons easily during a ride. Two options:
+- Mount the buttons on top of the pod (electronics enclosure) or
+- Wire the buttons detached of the pod and attach the buttons to your handlebars 
+
 
