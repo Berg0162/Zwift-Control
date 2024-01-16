@@ -32,3 +32,28 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 |One Click|Increase FTP|Decrease FTP|
 |Double Click| | |
 |Long|Change your Camera View|Skip a Workout Segment  |
+
+### Two buttons
+
+<img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
+
+Connecting two push buttons for game control is quite easy but should be done correctly. A membrane push button has the advantage that it is not very sensitive to fluids....<br>
+<b>Wiring the two buttons correctly</b><br>
+Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
+<br clear="left">
+
+<b>PullUP</b><br>
+The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
+```C++
+    // initialize the LEFT/RIGHT pushbutton pins as an input:
+    pinMode(buttonPin_RIGHT, INPUT_PULLUP); // button pushed --> LOW
+    pinMode(buttonPin_LEFT, INPUT_PULLUP);  // button pushed --> LOW   
+```
+<br>
+<p align=left>
+<img src="./images/button.png" width="796" height="336" alt="Zteering">
+</p>
+<br clear="left">
+<b>PullDOWN</b><br>
+Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground with a 10kOhm resistor. The other button side is connected to Vcc. When the button is pushed/closed the GPIO pin will go to logical HIGH.<br>
+
