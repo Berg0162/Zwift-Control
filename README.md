@@ -37,7 +37,7 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
-Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids....<br>
+Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids and it has a sticky tape at the bottom for easy mounting on the handlebars...<br>
 
 <b>Wiring correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
@@ -61,7 +61,7 @@ Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground
 ### Setup around the handlebars
 Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that houses the board and a (LiPo) battery <b>near the handlebars</b>. It is critical that you can reach the buttons easily during a ride. Two obvious options:
 - Mount the buttons on top of the pod or
-- Wire the buttons detached of the pod and tie the buttons to your handlebars
+- Wire the buttons detached of the pod and tie or stick the buttons to your handlebars.
 
 Notice how in this ergonomic setup a modified cable binder (type Velcro strap) is holding the (face down!) pushbutton in place. Fore finger is doing the clicking in a natural way while holding the handlebar.
  
