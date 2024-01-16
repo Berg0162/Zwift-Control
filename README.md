@@ -1,5 +1,5 @@
 # Zwift-Control
-Simple Zwift BLE Remote Control with only 2 buttons
+Simple Zwift game BLE Remote Control with only 2 buttons
 
 ## Versions for 2 different SOC's:
 - ESP32 with H2Zero's NimBLE library
