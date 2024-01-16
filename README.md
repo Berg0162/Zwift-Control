@@ -37,10 +37,8 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
-Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids....
-- Mount the buttons on top of the pod (project container) that houses the board and LiPo battery
-- wire the buttons and attach them to your handlebar where you can reach them quickly
-<br>
+Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids....<br>
+
 <b>Wiring the two buttons correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
 <br clear="left">
@@ -59,4 +57,7 @@ The most simple setup is to activate and use the internal pullup resistor that t
 <br clear="left">
 <b>PullDOWN</b><br>
 Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground with a 10kOhm resistor. The other button side is connected to Vcc. When the button is pushed/closed the GPIO pin will go to logical HIGH.<br>
+
+- Mount the buttons on top of the pod (project container) that houses the board and LiPo battery
+- wire the buttons and attach them to your handlebar where you can reach them quickly
 
