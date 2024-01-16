@@ -45,9 +45,9 @@ Wire the buttons to the GPIO pins of the respective development boards in accord
 <b>PullUP</b><br>
 The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
 ```C++
-    // initialize the LEFT/RIGHT pushbutton pins as an input:
-    pinMode(buttonPin_RIGHT, INPUT_PULLUP); // button pushed --> LOW
-    pinMode(buttonPin_LEFT, INPUT_PULLUP);  // button pushed --> LOW   
+// Two Keys/Buttons settings connected to
+#define PIN_BUTTON1    A0   // GPIO26 -> ESP32 Feather V2 
+#define PIN_BUTTON2    A1   // GPIO25 -> ESP32 Feather V2
 ```
 <br>
 <p align=left>
