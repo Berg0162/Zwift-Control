@@ -37,7 +37,7 @@ In addition the Zwift game knows two different modes: Freeride/Race and Workout 
 
 <img src="./images/membrane-keypad-red-button-600x600w.jpg" width="200" height="200" align="left" alt="Membrane Button"><br>
 
-Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids and it has a sticky tape at the back for easy mounting on the handlebars...<br>
+Connecting two push buttons to the board is quite easy but should be done correctly. Any push button will do but a membrane push button has the advantage that it is not very sensitive to fluids and it has a sticky tape at the back for easy mounting...<br>
 
 <b>Wiring correctly</b><br>
 Wire the buttons to the GPIO pins of the respective development boards in accordance with the settings in the code, or change the settings!
@@ -50,9 +50,10 @@ Wire the buttons to the GPIO pins of the respective development boards in accord
 <b>PullUP</b><br>
 The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
 ```C++
+// https://www.arduino.cc/reference/en/libraries/onebutton/
 #include <OneButton.h>
 
-// Setup and use PullUp resistors TRUE means button pushed --> LOW
+// Setup and use external PullUp resistors TRUE means button pushed --> LOW
 OneButton zwiftButton1(PIN_BUTTON1, true);
 OneButton zwiftButton2(PIN_BUTTON2, true);
 ```
@@ -64,8 +65,28 @@ OneButton zwiftButton2(PIN_BUTTON2, true);
 <b>PullDOWN</b><br>
 Connect a button at one side to the GPIO pin of your choice <b>and</b> to ground with a 10kOhm resistor. The other button side is connected to Vcc. When the button is pushed/closed the GPIO pin will go to logical HIGH.<br>
 
+## Key to Zwift Action mapping
+The 3 states of the 2 buttons are mapped in the Zwift Control code to max 6 Zwift actions (see above) that are most relevant to select remotely during a ride or workout. The selection can be changed at your own appreciation...
+```C++
+/*                                      Key list value       Name         Zwift Action       
+                                        KEY_ESC;          // Escape       Show End Ride Screen
+                                        KEY_RETURN;       // Return/Enter Confirm choice/Select
+                                        KEY_PAGE_UP;      // Page Up      Increase FTP
+                                        KEY_PAGE_DOWN;    // Page Down    Decrease FTP
+                                        KEY_UP_ARROW;     // Up arrow     Display Action Bar
+*/
+const uint8_t singleClickButton1Value = KEY_LEFT_ARROW;   // Left arrow   Turn left at intersection
+const uint8_t singleClickButton2Value = KEY_RIGHT_ARROW;  // Right arrow  Turn right at intersection
+
+const uint8_t doubleClickButton1Value = KEY_SPACE;        // Space        Power Up
+const uint8_t doubleClickButton2Value = KEY_DOWN_ARROW;   // Down arrow   Make an U-turn
+
+const uint8_t longPressStopButton1Value = 49;             // 49-57 1-9    Change your Camera View 1 - 9 views
+const uint8_t longPressStopButton2Value = KEY_TAB;        // Tab          Skip Workout Step
+
+```
 ## Setup around the handlebars
-Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that houses the board and a (LiPo) battery <b>near the handlebars</b>. It is critical that you can reach the buttons easily during a ride. Two obvious options:
+Use your inventiveness to mount the electronics enclosure (a.k.a. pod) that houses the board and a (LiPo) battery <b>near the handlebars</b>. It is critical that you can reach the buttons easily during an intense ride or workout. Two obvious options:
 - Mount the buttons on top of the pod or
 - Wire the buttons detached of the pod and tie or stick the buttons to your handlebars.
 
@@ -76,6 +97,6 @@ Notice how in this ergonomic setup a modified cable binder (type Velcro strap) i
 ### How to connect to your computer?
 When you first power on your ESP32/nRF52 board with the Zwift-Control code loaded, it advertises itself as a standard Bluetooth keyboard (officially per the spec called a HID – Human Interface Device). That means you’ll see it show up on your Bluetooth settings on a Mac or PC. Notice: Zwift itself doesn’t support the Bluetooth HID devices. Pairing is between the computer and the Zwift Control!<br>
 
-You’ll simply have to go into your Bluetooth devices on Mac or PC, and pair it up just like you’d pair up a new Bluetooth keyboard, mouse, headphones, or whatever else it is that you pair. Only after you have successfully paired it with your computer that runs the Zwift app, it will be active during the next Zwift ride. Next time when you start your computer and ESP32/nRF52 Zwift Control, pairing will be fully automatic: auto pairing!
+You’ll simply have to go into your Bluetooth devices on Mac or PC, and pair it up just like you’d pair up a new Bluetooth keyboard, mouse or headphones. Only after you have successfully paired it with your computer that runs the Zwift app, it will be active during a Zwift ride. Next time when you start your computer and ESP32/nRF52 Zwift Control, pairing will be fully automatic without your intervention! As long as you do not remove the Zwift Control from the list of bonded BLE devices it will pair when both devices are powered on!
 
 
