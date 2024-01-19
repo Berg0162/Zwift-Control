@@ -50,12 +50,17 @@ Wire the buttons to the GPIO pins of the respective development boards in accord
 <b>PullUP</b><br>
 The most simple setup is to activate and use the internal pullup resistor that these SOC's offer: connect a button at one side to the GPIO pin of your choice and the other button side to ground. When the button is pushed/closed the GPIO pin will go to logical LOW.
 ```C++
-// https://www.arduino.cc/reference/en/libraries/onebutton/
 #include <OneButton.h>
-
-// Setup and use external PullUp resistors TRUE means button pushed --> LOW
-OneButton zwiftButton1(PIN_BUTTON1, true);
-OneButton zwiftButton2(PIN_BUTTON2, true);
+/* https://www.arduino.cc/reference/en/libraries/onebutton/
+ * Initialize the OneButton library.
+ * OneButton::OneButton(const int pin, const boolean activeLow, const bool pullupActive)
+ * @param pin           -> The pin to be used for input from a momentary button.
+ * @param activeLow     -> Set to true when the input level is LOW when the button is pressed, Default is true.
+ * @param pullupActive  -> Activate the internal pullup when available. Default is true.
+ */
+// Setup button pushed input level is LOW and use internal PullUp resistor 
+OneButton zwiftButton1(PIN_BUTTON1, true, true);
+OneButton zwiftButton2(PIN_BUTTON2, true, true);
 ```
 <br>
 <p align=left>
