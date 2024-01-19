@@ -92,20 +92,20 @@ void loop() {
   if(bleKeyboard.isConnected() & (buttonPressed != 0x00) ) {
     DEBUG_PRINTF("Sending Key pressed: [%d]\n", buttonPressed);
     bleKeyboard.press(buttonPressed);
-    delay(100);
+    delay(10);
     if(buttonPressed == KEY_DOWN_ARROW) {
-       delay(1250); // Zwift demands to wait before releasing, otherwise NO effect!
+       delay(1350); // Zwift demands to wait before releasing, otherwise NO effect!
     }
     bleKeyboard.release(buttonPressed);    // this releases the button
     // Handle second set of keys that are valid only in workout mode
     if(buttonPressed == KEY_LEFT_ARROW) {
        bleKeyboard.press(KEY_PAGE_UP);     // Page Up      Increase FTP
-       delay(100);
+       delay(10);
        bleKeyboard.release(KEY_PAGE_UP);   // this releases the button 
     }
     if(buttonPressed == KEY_RIGHT_ARROW) {
        bleKeyboard.press(KEY_PAGE_DOWN);   // Page Down    Decrease FTP
-       delay(100);
+       delay(10);
        bleKeyboard.release(KEY_PAGE_DOWN); // this releases the button
     }
   }
