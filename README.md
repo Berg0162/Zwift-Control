@@ -8,6 +8,8 @@ Simple Zwift game BLE Remote Control with only 2 buttons
 ## What it does:
 The code turns an ESP32/nRF52 board into a 2 button (with 3 states) Bluetooth LE controller. Optimized for use with Zwift game to remotely initiate specific game actions that are mapped (by the Zwift app) to different keys of the regular keyboard.<br> 
 In short: mimics some keys of your keyboard!
+- ESP32 users<br>
+See also: [modified support library for NimBLE-Arduino version 2.x](https://github.com/Berg0162/ESP32-NIMBLE-Keyboard)
 
 ## Low cost DIY alternative for:
 - Some functionality of Keith Wakeham's [Kommander](https://titanlab.co/715-2/) <br>
