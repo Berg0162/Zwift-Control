@@ -2,7 +2,7 @@
 Simple Zwift game BLE Remote Control with only 2 buttons
 
 ## Versions for 2 different SOC's:
-- ESP32 with H2Zero's NimBLE library
+- ESP32 with H2Zero's NimBLE-Arduino library (<b>esp32_Zwift_Control_v02</b> complies the latest version 2.x)
 - nRF52840 with Adafruit's Bluefruit library
 
 ## What it does:
