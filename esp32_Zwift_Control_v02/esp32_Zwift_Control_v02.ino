@@ -1,14 +1,17 @@
 /**
  *
- *          Simple Zwift BLE Remote Control with only 2 buttons
+ *          Simple Zwift NimBLE Remote Control with only 2 buttons
  *
- * Short:                     Zwift Control
+ * Short:                     Zwift-Control
  *
- * The code turns the ESP32 into a 2 button (with 3 states) Bluetooth LE controller. 
+ * The code turns the ESP32 into a 2 button (with 3 states) NimBLE controller. 
  * Optimized for use with Zwift game to remotely initiate specific game actions that
  * are mapped (by the Zwift app) to different keys of the regular PC-keyboard (Windows).
  *
- *              Tested with Adafruit Feather ESP32 V2 a.k.a. Huzzah
+ *              Tested with:
+ *                          Adafruit Feather ESP32 V2 a.k.a. Huzzah
+ *                          LilyGo ESP32S3 T-Display
+ *                          Seeed Studion XIAO ESP32S3 Sense
  *
  * The code uses the ESP32 NimBLE libraries see: https://github.com/h2zero/NimBLE-Arduino version 2.x
  *
@@ -30,8 +33,9 @@
 uint8_t batteryPercentage = 90; // Default value
 
 #include <NimBleKeyboard.h>
-BleKeyboard zwiftKeyboard("Zwift Control", "Espressif", batteryPercentage);
+BleKeyboard zwiftKeyboard("Zwift-Control", "Espressif", batteryPercentage);
 uint8_t buttonPressed = 0;
+bool IsActiveSession = false;
 
 #include "esp32ButtonControl.h"
 
@@ -59,10 +63,11 @@ void setup() {
 #endif
   zwiftKeyboard.setBatteryLevel(batteryPercentage); // Update present battery level percentage
 
-  DEBUG_PRINTLN("Setup NimBLE and advertise \"Zwift Control\" like a HID keyboard!");
+  DEBUG_PRINTLN("Setup NimBLE and advertise \"Zwift-Control\" HID keyboard!");
   zwiftKeyboard.begin();
   while(!zwiftKeyboard.isConnected()) delay(10); // wait for connection!
-  DEBUG_PRINTLN("NimBLE HID keyboard is successfully connected!");
+  DEBUG_PRINTLN("Zwift-Control keyboard is successfully connected!");
+  IsActiveSession = true;
   setupButtonControl();
 }
 
@@ -78,6 +83,19 @@ bool isTimeToNotifyBatteryLevel(void) {
 #endif
 
 void loop() {
+  if(!zwiftKeyboard.isConnected()) {
+    if(IsActiveSession) {
+        DEBUG_PRINTLN(" --> Zwift-Control Keyboard Disconnected: Advertising Again!");
+        IsActiveSession = false;
+    }
+    delay(100);
+    return;
+  }
+  if(!IsActiveSession) {
+    DEBUG_PRINTLN(" --> Zwift-Control Keyboard Reconnected!");
+    IsActiveSession = true;
+  }
+
   buttonPressed = getButtonState();
 #ifdef BATTERY     // When "esp32BatteryLevel.h" is included -> BATTERY is defined   
   if(zwiftKeyboard.isConnected() & isTimeToNotifyBatteryLevel()) {
