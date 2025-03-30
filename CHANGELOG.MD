@@ -8,9 +8,11 @@ Tweaked NimBLE Keyboard Class for better performance
 - Set server auto-restart-advertise ON
 - Set Generic Access Appearance
 - Set Device Name in Advertising data
+
 Modified Main code
 - Show/handle reconnect after a disconnect in loop()
 - Minor tweaks
+
 ### Modified
 Updated README.md
 - Improved documentation for ESP32 users
